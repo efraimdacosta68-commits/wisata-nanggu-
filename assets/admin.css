@@ -1,0 +1,47 @@
+/* ===== Dashboard Admin ===== */
+:root{--g1:#0b4f4a;--g2:#0d9488;--g3:#14b8a6;--bg:#eef5f4}
+body.adm{background:linear-gradient(180deg,#eef5f4,#f7fbfa);min-height:100vh;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.adm-nav{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 24px rgba(11,79,74,.35);position:sticky;top:0;z-index:1030}
+.adm-nav .navbar-brand{font-weight:700;letter-spacing:.3px}
+.adm-nav .navbar-brand img{box-shadow:0 3px 10px rgba(0,0,0,.3)}
+.adm-nav .btn-web{background:#fff;color:var(--g1);font-weight:600;border:0;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+/* sidebar */
+.adm-side{background:#fff}
+@media(min-width:992px){.adm-side{box-shadow:4px 0 24px rgba(11,79,74,.10);min-height:calc(100vh - 64px);position:sticky;top:64px;align-self:flex-start}}
+.adm-side .list-group{padding:14px 12px;gap:4px}
+.adm-side .list-group-item{border:0!important;border-radius:12px!important;padding:11px 14px;color:#24433f;font-weight:500;display:flex;align-items:center;gap:12px;transition:.2s}
+.adm-side .list-group-item i{font-size:1.1rem;width:22px;text-align:center;color:var(--g2)}
+.adm-side .list-group-item:hover{background:#e6f6f4;transform:translateX(4px);box-shadow:0 4px 12px rgba(13,148,136,.18)}
+.adm-side .list-group-item.active{background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;box-shadow:0 8px 18px rgba(13,148,136,.45)}
+.adm-side .list-group-item.active i{color:#fff}
+.adm-side .list-group-item.text-danger i{color:#dc3545}
+.adm-side .list-group-item.text-danger:hover{background:#fde8ea;box-shadow:0 4px 12px rgba(220,53,69,.2)}
+.adm-side .side-title{font-size:.7rem;font-weight:700;letter-spacing:1.2px;color:#8aa5a1;padding:10px 14px 2px;text-transform:capitalize}
+/* konten */
+.adm-main h4{font-weight:700;color:var(--g1)}
+.adm .card{border:0;border-radius:18px;box-shadow:0 8px 24px rgba(11,79,74,.12)}
+.adm .card:hover{transform:none;box-shadow:0 8px 24px rgba(11,79,74,.12)!important}
+.adm .table{border-radius:14px;overflow:hidden}
+.adm .alert{border:0;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.10)}
+/* banner sambutan */
+.welcome{background:linear-gradient(135deg,var(--g1),var(--g2) 60%,var(--g3));color:#fff;border-radius:22px;padding:26px 28px;box-shadow:0 14px 32px rgba(13,148,136,.40);position:relative;overflow:hidden}
+.welcome::after{content:"";position:absolute;right:-50px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.10)}
+.welcome::before{content:"";position:absolute;right:90px;bottom:-80px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.welcome img{box-shadow:0 6px 16px rgba(0,0,0,.3)}
+.welcome .btn{background:#fff;color:var(--g1);font-weight:600;border:0}
+/* kartu statistik */
+.stat-card{display:block;text-decoration:none;color:inherit;background:#fff;border-radius:18px;padding:18px 20px;box-shadow:0 8px 24px rgba(11,79,74,.14);transition:.25s;position:relative;overflow:hidden;border-bottom:4px solid var(--c,var(--g2))}
+.stat-card:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(11,79,74,.28);color:inherit}
+.stat-card .ic{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;background:var(--c,var(--g2));box-shadow:0 8px 16px color-mix(in srgb,var(--c,var(--g2)) 50%,transparent)}
+.stat-card .num{font-size:2.2rem;font-weight:800;line-height:1;color:#12332f}
+.stat-card small{color:#6b8682;font-weight:600}
+.stat-card .go{position:absolute;right:16px;bottom:12px;color:#b9cfcb;transition:.25s}
+.stat-card:hover .go{color:var(--c,var(--g2));transform:translateX(4px)}
+
+/* ===== Semua teks admin: huruf besar di depan tiap kata ===== */
+.adm h1,.adm h2,.adm h3,.adm h4,.adm h5,.adm h6,.adm label,.adm th,.adm .btn,.adm .badge,
+.adm .list-group-item,.adm .side-title,.adm .navbar-brand,.adm .stat-card small,
+.adm .welcome small,.adm .welcome div,.adm .form-text,.adm .form-label,.adm option,
+.adm .card-body>b,.adm .card-body>span,.adm .card-body>small{text-transform:capitalize}
+/* data isian pengguna (isi tabel & kolom input) tidak diubah */
+.adm td,.adm input,.adm textarea{text-transform:none}
