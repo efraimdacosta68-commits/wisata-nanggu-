@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS desa_tawun CHARACTER SET utf8mb4; USE desa_tawun;
+CREATE TABLE admin(id INT AUTO_INCREMENT PRIMARY KEY,username VARCHAR(50) UNIQUE,password VARCHAR(255));
+CREATE TABLE settings(k VARCHAR(50) PRIMARY KEY,v TEXT);
+CREATE TABLE berita(id INT AUTO_INCREMENT PRIMARY KEY,judul VARCHAR(200),isi TEXT,gambar VARCHAR(1000),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE wisata(id INT AUTO_INCREMENT PRIMARY KEY,nama VARCHAR(150),deskripsi TEXT,gambar VARCHAR(1000),link_tiket VARCHAR(500) NULL,jarak VARCHAR(120) NULL,aktivitas TEXT NULL);
+CREATE TABLE umkm(id INT AUTO_INCREMENT PRIMARY KEY,nama VARCHAR(150),pemilik VARCHAR(100),harga INT DEFAULT 0,kontak VARCHAR(30),deskripsi TEXT,gambar VARCHAR(1000));
+CREATE TABLE dokumen(id INT AUTO_INCREMENT PRIMARY KEY,judul VARCHAR(200),nomor VARCHAR(80),file VARCHAR(100),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE peta(id INT AUTO_INCREMENT PRIMARY KEY,nama VARCHAR(150),kategori VARCHAR(50),lat DOUBLE,lng DOUBLE,keterangan TEXT);
+CREATE TABLE penduduk(id INT AUTO_INCREMENT PRIMARY KEY,nik VARCHAR(16) UNIQUE,no_kk VARCHAR(16),nama VARCHAR(120),jk CHAR(1),tgl_lahir DATE,dusun VARCHAR(60),rt VARCHAR(5),alamat VARCHAR(200));
+CREATE TABLE jenis_layanan(id INT AUTO_INCREMENT PRIMARY KEY,nama VARCHAR(120),syarat TEXT);
+CREATE TABLE permohonan(id INT AUTO_INCREMENT PRIMARY KEY,kode VARCHAR(20) UNIQUE,jenis VARCHAR(120),nik VARCHAR(16),nama VARCHAR(120),hp VARCHAR(20),keterangan TEXT,lampiran VARCHAR(100),hasil VARCHAR(100),status VARCHAR(20) DEFAULT 'Diproses',catatan TEXT,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+INSERT INTO settings VALUES('nama_desa','Desa Tawun'),('wilayah','Kec. Sekotong, Lombok Barat, NTB'),('hero_judul','Selamat Datang di Pariwisata Desa Tawun'),('hero_sub','Pusat informasi wisata bahari, berita, dan agenda Desa Tawun.'),('alamat','Jl. Pariwisata Sekotong, Dusun Tawun, Kec. Sekotong, Kab. Lombok Barat, NTB 83365'),('wa','087769065304'),('email','kontak@desa-tawun.id'),('jam','Senin - Jumat: 08.00 - 15.30 WITA'),('instagram','@wisatatawun_sekotong');
+INSERT INTO jenis_layanan(nama,syarat) VALUES('Surat Keterangan Tidak Mampu (SKTM)','KTP & KK'),('Surat Keterangan Usaha (SKU)','KTP, KK, foto usaha'),('Pengantar Akta Kelahiran','Surat lahir RS/bidan, KK, KTP orang tua, buku nikah'),('Pengantar Akta Kematian','Surat kematian, KK, KTP almarhum'),('Pengantar KTP / Kartu Keluarga','KK lama, surat pindah (jika ada)'),('Surat Keterangan Domisili','KTP & KK'),('Surat Pengantar Nikah','KTP, KK, pas foto, akta lahir'),('Surat Pindah Penduduk','KTP & KK');
+INSERT INTO peta(nama,kategori,lat,lng,keterangan) VALUES('Kantor Desa Tawun','Kantor',-8.7420,116.0070,'Pelayanan administrasi'),('Gili Nanggu','Wisata',-8.7480,115.8000,'Pulau wisata snorkeling'),('Gili Sudak','Wisata',-8.7560,115.8200,'Pantai pasir putih'),('Gili Kedis','Wisata',-8.7700,115.8650,'Pulau kecil');
+INSERT INTO settings VALUES('fonnte_token','');
+CREATE TABLE IF NOT EXISTS hero_slide(id INT AUTO_INCREMENT PRIMARY KEY,gambar VARCHAR(100),urut INT DEFAULT 0,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
